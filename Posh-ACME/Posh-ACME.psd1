@@ -5,13 +5,16 @@ ModuleVersion = '4.2.0'
 GUID = '5f52d490-68dd-411c-8252-828c199a4e63'
 Author = 'Ryan Bolger'
 Copyright = '(c) 2018 Ryan Bolger. All rights reserved.'
-Description = 'ACMEv2 protocol client for generating certificates using Let''s Encrypt (or other ACMEv2 compliant CA)'
+Description = @'
+ACMEv2 protocol client for generating certificates using Let''s Encrypt (or other ACMEv2 compliant CA)
+This is a custom build intended allow compatibility with .NET 4.6.1. It should not be used with PowerShell Core and you should only attempt to use RSA based key options.
+'@
 CompatiblePSEditions = @('Desktop','Core')
 PowerShellVersion = '5.1'
-DotNetFrameworkVersion = '4.7.1'
+DotNetFrameworkVersion = '4.6.1'
 
 # Assemblies that must be loaded prior to importing this module
-RequiredAssemblies = @('lib\BC.Crypto.1.8.8.2-netstandard2.0.dll')
+RequiredAssemblies = @('lib\BC.Crypto.1.8.8.dll')
 
 # Format files (.ps1xml) to be loaded when importing this module
 FormatsToProcess = 'Posh-ACME.Format.ps1xml'
@@ -65,7 +68,7 @@ PrivateData = @{
     PSData = @{
 
         # Tags applied to this module. These help with module discovery in online galleries.
-        Tags = 'LetsEncrypt','ssl','tls','certificates','acme','Linux','Mac'
+        Tags = 'LetsEncrypt','ssl','tls','certificates','acme'
 
         # A URL to the license for this module.
         LicenseUri = 'https://github.com/rmbolger/Posh-ACME/blob/main/LICENSE'
